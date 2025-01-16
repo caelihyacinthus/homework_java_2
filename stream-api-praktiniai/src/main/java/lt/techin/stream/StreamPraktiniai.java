@@ -73,7 +73,7 @@ public class StreamPraktiniai {
     }
 
     public static Optional<User> findAny(List<User> users, String name) {
-        return users.stream().findAny();
+        return users.stream().filter(u -> u.getName().equals(name)).findAny();
     }
 
     public static List<User> sortByAge(List<User> users) {
