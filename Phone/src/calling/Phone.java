@@ -1,11 +1,12 @@
-import itaphones.phone.MobilePhone;
-import itaphones.phone.Phone;
+package calling;
 
-public class FakePhone implements Phone {
-    private MobilePhone mobilePhone;
+import itaphones.phone.MobilePhone;
+
+public class Phone implements itaphones.phone.Phone {
+    private final MobilePhone mobilePhone;
     private String response;
 
-    public FakePhone(){
+    public Phone(){
         mobilePhone = new MobilePhone();
         response = "";
     }

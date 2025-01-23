@@ -4,4 +4,8 @@ target/
 *.json
 *.yml
 *.class
+*.iml
+out/
 test/
+lib/
+
