@@ -3,17 +3,10 @@ package bank;
 import java.math.BigDecimal;
 
 public class SmallAccount implements ibank.Account {
-    private String accountNumber;
-    private String accountOwner;
+    private final String accountNumber;
+    private final String accountOwner;
     private BigDecimal balance;
-    private BigDecimal credit;
-
-    public SmallAccount(String accountNumber, String accountOwner, BigDecimal balance) {
-        this.accountNumber = accountNumber;
-        this.accountOwner = accountOwner;
-        this.balance = balance;
-        this.credit = new BigDecimal(0);
-    }
+    private final BigDecimal credit;
 
     public SmallAccount(String accountNumber, String accountOwner, BigDecimal balance, BigDecimal credit) {
         this.accountNumber = accountNumber;

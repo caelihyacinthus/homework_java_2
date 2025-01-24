@@ -6,7 +6,6 @@ import ibank.Bank;
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Objects;
 
 public class SmallBank implements Bank {
     private final HashSet<Account> accounts = new HashSet<>();
@@ -28,12 +27,6 @@ public class SmallBank implements Bank {
 
     @Override
     public Account openDebitAccount(String accountHolderName) {
-//        if (getAccountByHolderName(accountHolderName) != null) {
-//            return null;
-//        }
-//        int number = (int) (Math.random() * 1000);
-//        Account account = new SmallAccount(String.valueOf(number), accountHolderName, new BigDecimal(0));
-//        accounts.add(account);
         return openCreditAccount(accountHolderName, new BigDecimal(0));
     }
 
@@ -50,9 +43,6 @@ public class SmallBank implements Bank {
 
     @Override
     public Account getAccountByHolderName(String accountHolderName) {
-//        for (Account acc : accounts) {
-//            if (Objects.equals(acc.getHolderName(), accountHolderName)) return acc;
-//        }
         return accounts.stream().filter(acc -> acc.getHolderName().equals(accountHolderName)).findFirst().orElse(null);
     }
 
